@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>EventHubWorkerService</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Identity" Version="1.13.2" />
+		<PackageReference Include="Azure.Messaging.EventHubs" Version="5.11.6" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.3.0" />
+		<PackageReference Include="Microsoft.Extensions.Resilience" Version="9.3.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+	</ItemGroup>
+
+</Project>
