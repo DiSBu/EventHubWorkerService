@@ -4,7 +4,7 @@ using Serilog;
 
 namespace EventHubWorkerService;
 
-public class Worker(IEventHubProducerService producerService) : BackgroundService
+public class EventProducerHostedService(IEventHubProducerService producerService) : BackgroundService
 {
     private readonly IEventHubProducerService _producerService = producerService;
 

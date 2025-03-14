@@ -1,4 +1,5 @@
 ﻿using Azure.Identity;
+using Azure.Messaging.EventHubs.Consumer;
 using Azure.Messaging.EventHubs.Producer;
 using EventHubWorkerService.Interfaces;
 using EventHubWorkerService.Settings;
@@ -15,6 +16,15 @@ public sealed class EventHubClientFactory(IOptions<EventHubSettings> settings) :
         return new EventHubProducerClient(
             _settings.Namespace,
             _settings.EventHubName,
+            new DefaultAzureCredential());
+    }
+
+    public EventHubConsumerClient CreateEventHubConsumerClient()
+    {
+        return new EventHubConsumerClient(
+            settings.Value.ConsumerGroup,
+            settings.Value.Namespace,
+            settings.Value.EventHubName,
             new DefaultAzureCredential());
     }
 }

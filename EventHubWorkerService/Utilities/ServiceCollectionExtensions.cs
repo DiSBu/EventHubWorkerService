@@ -11,7 +11,10 @@ namespace EventHubWorkerService.Utilities
         {
             services.AddSingleton<IEventHubClientFactory, EventHubClientFactory>();
             services.AddSingleton<IEventHubProducerService, EventHubProducerService>();
-            services.AddHostedService<Worker>();
+            services.AddSingleton<EventConsumerService>();
+
+            services.AddHostedService<EventProducerHostedService>();
+            services.AddHostedService<EventConsumerHostedService>();
 
             return services;
         }
